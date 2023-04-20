@@ -1,0 +1,27 @@
+<div class="row mt-2">
+  <div class="col">
+    <h3>Signals</h3>
+    <hr />
+
+    <p>Count: {{count()}}</p>
+    <hr>
+    <p>Double Count: {{doubleCount()}}</p>
+    <p>Count 1 + Count 2: {{count1PlusCount2()}}</p>
+  </div>
+
+  <div class="col">
+    <h3>RxJs</h3>
+    <hr />
+
+    <p>Count: {{ count$ | async }}</p>
+    <p>Value: {{ count$.value }}</p>
+    <p>Get Value: {{ count$.getValue() }}</p>
+    <hr>
+    <p>Double Count: {{doubleCount$ | async}}</p>
+    <p>Count 1 + Count 2: {{count1PlusCount2$ | async}}</p>
+  </div>
+</div>
+
+<button (click)="triggerChanges();">
+    Cambiar
+</button>
