@@ -35,6 +35,8 @@ export class UsersSignalPageComponent implements OnInit {
   }
 
   loadPage(page: number) {
+    currentPage.set(page)
+
     this.usersService.loadPage(page)
         .pipe(
           filter(users => users.length > 0)

@@ -12,6 +12,10 @@ const routes: Routes = [
     loadChildren: () => import('./users/users.module').then(m =>m.UsersModule),
   },
   {
+    path: 'paulina',
+    loadChildren: () => import('./paulina/paulina.module').then(m =>m.PaulinaModule),
+  },
+  {
     path: '**',
     redirectTo: 'users'
   }
