@@ -8,6 +8,7 @@ import { PaulinaService } from '../../services/paulina.service';
 })
 export class RecipesComponent {
   recipesService = inject(PaulinaService)
+  colors = ['primary','secondary','success','danger','warning']
 
   constructor() {
   }
@@ -24,6 +25,10 @@ export class RecipesComponent {
       items: this.recipesService.itemsPerPage,
       total: this.recipesService.recipes.length,
     }
+  }
+
+  get color() {
+    return `bg-${this.colors[Math.round(Math.random()*4)]}`
   }
 
 }

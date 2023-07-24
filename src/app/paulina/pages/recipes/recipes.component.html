@@ -1,6 +1,7 @@
 <div class="container container-flex mt-3">
   <div
-    class="card"
+    class="card text-white"
+    [ngClass]="color"
     style="width: 18rem"
     *ngFor="
       let recipe of recipes()
@@ -8,15 +9,15 @@
     "
   >
     <div class="card-body">
-      <h5 class="card-title">{{ recipe.title.rendered }}</h5>
+      <h5 class="card-header">{{ recipe.title.rendered }}</h5>
       <p class="card-text">
         <span
           [innerHTML]="recipe.excerpt.rendered"
-          style="text-overflow: ellipsis"
+          style="text-overflow: ellipsis; text-align: justify;"
         ></span>
         <!-- {{recipe.content.rendered}} -->
       </p>
-      <a class="btn btn-primary" [href]="recipe.link" target="_blank"
+      <a class="btn btn-primary button" [href]="recipe.link" target="_blank"
         >Go to recipe</a
       >
     </div>

@@ -1,5 +1,13 @@
 .container-flex {
     display: flex; 
     flex-flow: wrap; 
+    justify-content: center;
     gap: 1.2rem;
+    position: relative;
+}
+
+.button {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
 }
