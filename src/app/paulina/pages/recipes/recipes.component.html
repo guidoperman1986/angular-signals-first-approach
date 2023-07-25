@@ -1,7 +1,10 @@
-<div class="container container-flex mt-3">
+<div *ngIf="recipes().length === 0" class="loading">
+  <h1>Loading...</h1>
+</div>
+
+<div class="container container-flex mt-3" *ngIf="recipes().length > 0">
   <div
-    class="card text-white"
-    [ngClass]="color"
+    class="card border-info"
     style="width: 18rem"
     *ngFor="
       let recipe of recipes()
@@ -9,15 +12,15 @@
     "
   >
     <div class="card-body">
-      <h5 class="card-header">{{ recipe.title.rendered }}</h5>
-      <p class="card-text">
+      <h5 class="card-header text-secondary">{{ recipe.title.rendered }}</h5>
+      <p class="card-text mt-3">
         <span
+          class="text-info aligning"
           [innerHTML]="recipe.excerpt.rendered"
-          style="text-overflow: ellipsis; text-align: justify;"
         ></span>
         <!-- {{recipe.content.rendered}} -->
       </p>
-      <a class="btn btn-primary button" [href]="recipe.link" target="_blank"
+      <a class="btn btn-info button text-white" [href]="recipe.link" target="_blank"
         >Go to recipe</a
       >
     </div>

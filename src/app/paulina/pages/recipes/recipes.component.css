@@ -11,3 +11,14 @@
     bottom: 5px;
     right: 5px;
 }
+
+.aligning {
+    text-align: justify;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
